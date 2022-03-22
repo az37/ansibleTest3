@@ -1,0 +1,15 @@
+[linux]
+3.83.145.178
+54.163.13.177
+
+[winserver]
+EC2AMAZ-RDVKDGA 
+EC2AMAZ-EOKARLH 
+
+ 
+
+[winserver:vars]
+ansible_user=Administrator
+ansible_password=password@123
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore
