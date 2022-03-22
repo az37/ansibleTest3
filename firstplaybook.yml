@@ -1,0 +1,28 @@
+---
+- name: Copy into linux
+  hosts: linux
+
+  tasks:
+  - name: Create a file
+    copy:
+      content: "Hello World"
+      dest: ./playbook.txt
+  
+  - name: Install Git
+    yum:
+      name: git
+      state: present
+    become: yes
+
+- name: Copy into linux
+  hosts: winserver
+
+  tasks:
+  - name: Create a file
+    win_copy:
+      content: "Hello World"
+      dest: ./playbook.txt
+  - name: Install git
+    win_chocolatey:
+      name: git
+      state: present
